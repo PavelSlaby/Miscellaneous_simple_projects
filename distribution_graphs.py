@@ -47,8 +47,8 @@ distributions = {
                 }
 
 num = len(distributions)
-nrows = square_divisors(num)[0] #function to determine ideal number o rows and columns
-ncols = square_divisors(num)[1]
+nrows = square_divisors(num)[0] #function to determine ideal number o rows and columns, if the function is not available,... 
+ncols = square_divisors(num)[1] #...simply choose a number that makes sense in regards to the number of defined distributions
 
 
 # generating the graph
