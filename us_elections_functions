@@ -1,0 +1,13 @@
+def calc_pct(pct,biden, trump):
+    counted = biden + trump
+    total_expected = counted / pct
+    remaining = total_expected - counted
+    margin = trump - biden
+    needed = (remaining - margin ) / 2 + margin
+    return (needed / remaining)
+    
+
+print(str(calc_pct(0.88, 3143750, 3240998)) + "  - PA")
+print(str(calc_pct(0.99, 2425445, 2438216)) + "  - GA")
+print(str(calc_pct(0.76, 604251, 592813)) + "  - NV")
+print(str(calc_pct(0.94, 2655383, 2732084)) + "  - NC")
