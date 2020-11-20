@@ -55,6 +55,21 @@ file = 'sudoku.xlsx'
 raw = pd.read_excel(file, header = None, sheet_name = 'Hard')
 sudoku = np.nan_to_num(np.asarray(raw))
 
+def load_sudoku(file_name = 'sudoku.xlsx', sheet_name = None):
+    #file_name is the name of the file, possibly including the whole path, type of string
+    import pandas as pd
+    if sheet_name == None: 
+        raw = pd.read_excel(file_name, header = None, sheet_name = 1) #loads the first sheet only
+        raw = np.nan_to_num(np.asarray(raw))
+    else:
+        raw = pd.read_excel(file_name, header = None, sheet_name = sheet_name)
+        for key, value in raw.items():
+            raw[key] = np.nan_to_num(np.asarray(value))
+    return raw
+
+load_sudoku(sheet_name = ['Easy', 'Hard'])['Easy']
+load_sudoku()
+
 #%% necessary declarations
 def upper_bound(x): #function defines the upper boundary of a sub-matrix     
     for k in [3, 6, 9]:
@@ -123,53 +138,5 @@ while np.min(mat) == 0: # appplies the algorithm as long as the matrix contains 
                             if len(options - unsuitable2) == 1: 
                                mat[i, j] = int(list(options - unsuitable2)[0])
 print(mat)
-
-
-         
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        unsuitable2 = set()
-                        for o in list(options):
-                            o = {o}
-                            col2 = j
-                            row2 = i
-                            for col2 in range(0, 9): # goes row by row, each row has to contain all numbers, this checks whether a particular number could be filled in in any other cell in the same number, if not, it has to be filled in in current cell
-                                if mat[row2, col2] == 0: 
-                                    t = upper_bound(col2)
-                                    s = upper_bound(row2)
-                                    if col2 == j and o not in set(mat[(s-3):s, (t-3):t].flatten()).union(set(mat[col2])):
-                                        pass
-                                    elif col2 != j and o.intersection(set(mat[(s-3):s, (t-3):t].flatten()).union(set(mat[col2]))) == o:
-                                        pass
-                                    else:
-                                        unsuitable2 = unsuitable2.union(o)
-                        if len(options - unsuitable2) == 1:
-                            mat[i, j] = int(list(options - unsuitable2)[0])
-                        else:
-                            pass
-                           
-
-
 
 
