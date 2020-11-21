@@ -4,11 +4,12 @@ The algorithm first checks if there are any duplicate numbers in a row, column a
 
 '''
 
-def wo_zeros(matrix): #drops zeros out of the array
+def wo_zeros(matrix): #drops zeros out of an array
     return np.delete(matrix, np.where(matrix ==0))
 
 def sudoku_control(matrix):
     # matrix must be numpy.ndarray type, filled in with numbers 0 - 10, with 0 indicating "empty" cell 
+    import numpy as np
     k = []
     l = []
     
@@ -35,6 +36,7 @@ def sudoku_control(matrix):
         print("No problem detected, but Sudoku is not complete")
 
 
+import numpy as np
 sudoku = np.array([
         [1,2,0,6,0,8,0,0,9],
         [7,0,0,0,0,1,5,0,0],    
