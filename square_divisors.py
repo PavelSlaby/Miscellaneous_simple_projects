@@ -8,7 +8,7 @@ as the final table would simply have one cell empty and all the others filled
 def get_divisors(num, one_self = False): #function that returns all divisors (one_self = True) - or not including 1 and the number itself (default)
     divisors = []
     if one_self: 
-        r = range(1, num + 9)
+        r = range(1, num + 1)
     else: r = range(2, num) 
     for i in r:
         if num % i == 0:
