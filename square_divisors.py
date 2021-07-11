@@ -1,7 +1,8 @@
 '''
 the function square_divisors(num) returns a list of two numbers, that can be used as number of columns, rows  
 that can form a table, heatmap ets. which shape is as close to a square as possible.
-For example for 12 it retunr [4,3] but it also returns [4,3] for 11 
+Num is the number of cells of the hypothetical table.
+For example for 12 it returns [4,3] but it also returns [4,3] for 11 
 as the final table would simply have one cell empty and all the others filled 
 '''
 
