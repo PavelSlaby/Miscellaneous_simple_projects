@@ -1,0 +1,20 @@
+# Checks for "Perfect number" 
+# number for which the sum of its factors (excluding the number itself) equals the number itself . Fro example for 6 = 3 + 2 + 1
+
+number = 6
+
+def perfect_number(number):
+        factors = []
+        factors_sum = 0
+        
+        for i in range(1, number):
+            if number % i == 0:
+                factors.append(i)
+                factors_sum += i
+        if factors_sum == number:
+            return "is a perfect number, the factors are:" + str(factors)
+        else:
+            return "is NOT a perfect number"
+
+for i in range(0, 1000):
+    print("number " + str(i) + " "  + perfect_number(i))
