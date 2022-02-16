@@ -2,6 +2,8 @@
 """
 Created on Tue Jan 11 23:02:37 2022
 
+This creates a board for any game like tick-tack-toe, chess etc.
+
 @author: pavel
 """
 class board():
