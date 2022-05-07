@@ -2,13 +2,13 @@
 """
 Created on Sun Jan  9 17:28:48 2022
 
-## Game of Tick Tack Toe
+## Game of Tick Tack Toe 
 
 @author: pavel slaby
 """
 
 ##libraries
-
+## no libs needed
 
 simple_board = """
       
