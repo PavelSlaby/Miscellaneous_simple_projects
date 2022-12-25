@@ -8,6 +8,8 @@ import numpy as np
 from square_divisors import square_divisors
 
 
+
+
 # parameters
 sample = 1000 #sample size
 loc = 0
